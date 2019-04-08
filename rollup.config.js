@@ -75,9 +75,10 @@ async function main()
 				sourcemap,
 				extend: true,
 				globals: {
-					'pixi.js': 'PIXI'
+					'pixi.js': 'window.PIXI'
 				}
 			},
+			context: "window",
 			treeshake: false,
 			external: ['pixi.js'],
 			plugins: [jscc({values:{_IIFE:true}})].concat(plugins),
